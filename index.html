@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Charabot – Create & Chat with Characters</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%237c5cff'/%3E%3Cstop%20offset='1'%20stop-color='%23ff5c9d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='64'%20height='64'%20rx='15'%20fill='url(%23g)'/%3E%3Cg%20transform='rotate(-9%2022%2030)'%3E%3Cellipse%20cx='22'%20cy='19'%20rx='6.5'%20ry='15'%20fill='%23fff'/%3E%3Cellipse%20cx='22'%20cy='20'%20rx='3'%20ry='10'%20fill='%23ffb3d1'/%3E%3C/g%3E%3Cg%20transform='rotate(9%2042%2030)'%3E%3Cellipse%20cx='42'%20cy='19'%20rx='6.5'%20ry='15'%20fill='%23fff'/%3E%3Cellipse%20cx='42'%20cy='20'%20rx='3'%20ry='10'%20fill='%23ffb3d1'/%3E%3C/g%3E%3Cellipse%20cx='32'%20cy='42'%20rx='18'%20ry='15.5'%20fill='%23fff'/%3E%3Ccircle%20cx='25.5'%20cy='40'%20r='2.6'%20fill='%232a2540'/%3E%3Ccircle%20cx='38.5'%20cy='40'%20r='2.6'%20fill='%232a2540'/%3E%3Ccircle%20cx='20.5'%20cy='46'%20r='3'%20fill='%23ffc2da'%20opacity='.8'/%3E%3Ccircle%20cx='43.5'%20cy='46'%20r='3'%20fill='%23ffc2da'%20opacity='.8'/%3E%3Cellipse%20cx='32'%20cy='45'%20rx='2.6'%20ry='1.9'%20fill='%23ff5c9d'/%3E%3Cpath%20d='M28.5%2048.5q3.5%203.2%207%200'%20fill='none'%20stroke='%232a2540'%20stroke-width='1.6'%20stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app" id="app" data-v="list">
+  <aside class="side">
+    <div class="brand">✨ Charabot</div>
+    <div class="pad"><button class="btn pri" style="width:100%" onclick="openChar()">+ Create character</button>
+      <input class="search" id="q" placeholder="Search characters…" oninput="renderList()"></div>
+    <div class="list" id="list"></div>
+    <div class="pad" style="padding-top:8px;font-size:12px;color:var(--mut)"><div id="sync">💾 Saved locally on this browser</div><div class="row" style="margin-top:6px"><button class="btn" style="padding:5px 10px;font-size:12px" onclick="exportData()">Export backup</button><label class="btn" style="padding:5px 10px;font-size:12px;cursor:pointer;margin:0">Import<input type="file" id="imp" accept=".json,application/json" hidden></label></div></div>
+    <div class="pad" style="padding-top:0"><button class="btn" style="width:100%" onclick="newPersona()">+ Add a new persona</button></div>
+    <div class="me" id="me" onclick="openPersona()"></div>
+  </aside>
+  <section class="main" id="main"></section>
+</div>
+<div id="modal"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
